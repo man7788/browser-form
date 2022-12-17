@@ -1,11 +1,13 @@
 import './style.css';
 import checkEmailValid from './emailField';
+import checkCountryValid from './countryField';
 
 checkEmailValid();
+checkCountryValid();
 
 const input = document.querySelectorAll('input');
-input.forEach((j) => {
-  j.classList.add('initial');
+input.forEach((element) => {
+  element.classList.add('initial');
 });
 
 // 1 Email

@@ -1,10 +1,13 @@
 function emailElement() {
-  const form = document.querySelector('form');
   const email = document.querySelector('#email');
   const emailError = document.querySelector('#email + span.error');
-  const inputList = document.querySelectorAll('input');
-  return { form, email, emailError, inputList };
+  return { email, emailError };
 }
 
-function countryElement() {}
+function countryElement() {
+  const country = document.querySelector('#country');
+  const countryError = document.querySelector('#country + span.error');
+  return { country, countryError };
+}
+
 export { emailElement, countryElement };

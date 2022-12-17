@@ -3,12 +3,11 @@ import { emailElement } from './findElement';
 function checkEmailValid() {
   const { email } = emailElement();
   const { emailError } = emailElement();
-  const { inputList } = emailElement();
 
-  inputList.forEach((element) => {
-    element.addEventListener('input', () => {
-      element.classList.remove('initial');
-    });
+  email.addEventListener('focus', () => {
+    email.classList.remove('initial');
+    emailError.textContent = '';
+    emailError.className = 'error';
   });
 
   email.addEventListener('blur', () => {
