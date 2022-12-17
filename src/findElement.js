@@ -10,4 +10,10 @@ function countryElement() {
   return { country, countryError };
 }
 
-export { emailElement, countryElement };
+function zipElement() {
+  const zip = document.querySelector('#zip');
+  const zipError = document.querySelector('#zip + span.error');
+  return { zip, zipError };
+}
+
+export { emailElement, countryElement, zipElement };
