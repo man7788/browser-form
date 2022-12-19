@@ -2,10 +2,12 @@ import './style.css';
 import checkEmailValid from './emailField';
 import checkCountryValid from './countryField';
 import checkZipValid from './zipField';
+import checkpasswordValid from './passwordField';
 
 checkEmailValid();
 checkCountryValid();
 checkZipValid();
+checkpasswordValid();
 
 const input = document.querySelectorAll('input');
 input.forEach((element) => {

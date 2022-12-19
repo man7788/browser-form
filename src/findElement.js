@@ -16,4 +16,10 @@ function zipElement() {
   return { zip, zipError };
 }
 
-export { emailElement, countryElement, zipElement };
+function passwordElement() {
+  const password = document.querySelector('#password');
+  const passwordError = document.querySelector('#password + span.error');
+  return { password, passwordError };
+}
+
+export { emailElement, countryElement, zipElement, passwordElement };
