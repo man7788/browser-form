@@ -3,11 +3,13 @@ import checkEmailValid from './emailField';
 import checkCountryValid from './countryField';
 import checkZipValid from './zipField';
 import checkpasswordValid from './passwordField';
+import checkconfirmValid from './confirmField';
 
 checkEmailValid();
 checkCountryValid();
 checkZipValid();
 checkpasswordValid();
+checkconfirmValid();
 
 const input = document.querySelectorAll('input');
 input.forEach((element) => {

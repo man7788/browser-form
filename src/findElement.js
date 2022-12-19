@@ -22,4 +22,16 @@ function passwordElement() {
   return { password, passwordError };
 }
 
-export { emailElement, countryElement, zipElement, passwordElement };
+function confirmElement() {
+  const confirm = document.querySelector('#confirm');
+  const confirmError = document.querySelector('#confirm + span.error');
+  return { confirm, confirmError };
+}
+
+export {
+  emailElement,
+  countryElement,
+  zipElement,
+  passwordElement,
+  confirmElement,
+};
