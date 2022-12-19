@@ -4,17 +4,15 @@ import checkCountryValid from './countryField';
 import checkZipValid from './zipField';
 import checkpasswordValid from './passwordField';
 import checkconfirmValid from './confirmField';
+import { checkFromValid, initialFrom } from './submitControl';
 
 checkEmailValid();
 checkCountryValid();
 checkZipValid();
 checkpasswordValid();
 checkconfirmValid();
-
-const input = document.querySelectorAll('input');
-input.forEach((element) => {
-  element.classList.add('initial');
-});
+checkFromValid();
+initialFrom();
 
 // 1 Email
 // 2 Country

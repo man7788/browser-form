@@ -29,7 +29,7 @@ function showError() {
   if (confirm.validity.valueMissing) {
     confirmError.textContent = 'You need to enter the same password again.';
   } else if (confirm.validity.patternMismatch) {
-    confirmError.textContent = 'The password you entered does not match.';
+    confirmError.textContent = 'The passwords you entered does not match.';
     confirmError.className = 'error active';
   }
 }

@@ -28,10 +28,17 @@ function confirmElement() {
   return { confirm, confirmError };
 }
 
+function submitElement() {
+  const form = document.querySelector('form');
+  const highfive = document.querySelector('.highfive');
+  return { form, highfive };
+}
+
 export {
   emailElement,
   countryElement,
   zipElement,
   passwordElement,
   confirmElement,
+  submitElement,
 };
