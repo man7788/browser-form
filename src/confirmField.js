@@ -1,6 +1,6 @@
 import { confirmElement, passwordElement } from './findElement';
 
-function checkconfirmValid() {
+function checkConfirmValid() {
   const { confirm } = confirmElement();
   const { confirmError } = confirmElement();
 
@@ -17,12 +17,13 @@ function checkconfirmValid() {
       confirmError.textContent = '';
       confirmError.className = 'error';
     } else {
-      showError();
+      showConfirmError();
+      confirmError.className = 'error active';
     }
   });
 }
 
-function showError() {
+function showConfirmError() {
   const { confirm } = confirmElement();
   const { confirmError } = confirmElement();
 
@@ -30,8 +31,7 @@ function showError() {
     confirmError.textContent = 'You need to enter the same password again.';
   } else if (confirm.validity.patternMismatch) {
     confirmError.textContent = 'The passwords you entered does not match.';
-    confirmError.className = 'error active';
   }
 }
 
-export default checkconfirmValid;
+export { checkConfirmValid, showConfirmError };

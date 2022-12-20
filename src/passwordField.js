@@ -1,6 +1,6 @@
 import { passwordElement } from './findElement';
 
-function checkpasswordValid() {
+function checkPasswordValid() {
   const { password } = passwordElement();
   const { passwordError } = passwordElement();
 
@@ -15,12 +15,13 @@ function checkpasswordValid() {
       passwordError.textContent = '';
       passwordError.className = 'error';
     } else {
-      showError();
+      showPasswordError();
+      passwordError.className = 'error active';
     }
   });
 }
 
-function showError() {
+function showPasswordError() {
   const { password } = passwordElement();
   const { passwordError } = passwordElement();
 
@@ -28,11 +29,9 @@ function showError() {
     passwordError.textContent = 'You need to enter a password.';
   } else if (password.validity.patternMismatch) {
     passwordError.textContent =
-      'Password should contain at least one capital letter, one small letter and one special character';
+      'Password should contain at least one capital letter, one small letter and one special character.';
   } else if (password.validity.tooShort) {
     passwordError.textContent = `Password should be at least ${password.minLength} characters; you entered ${password.value.length}.`;
   }
-  passwordError.className = 'error active';
 }
-
-export default checkpasswordValid;
+export { checkPasswordValid, showPasswordError };

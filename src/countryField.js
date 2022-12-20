@@ -15,19 +15,18 @@ function checkCountryValid() {
       countryError.textContent = '';
       countryError.className = 'error';
     } else {
-      showError();
+      showCountryError();
+      countryError.className = 'error active';
     }
   });
 }
 
-function showError() {
+function showCountryError() {
   const { country } = countryElement();
   const { countryError } = countryElement();
 
   if (country.validity.valueMissing) {
     countryError.textContent = 'You need to enter a country name.';
   }
-  countryError.className = 'error active';
 }
-
-export default checkCountryValid;
+export { checkCountryValid, showCountryError };

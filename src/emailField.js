@@ -15,12 +15,13 @@ function checkEmailValid() {
       emailError.textContent = '';
       emailError.className = 'error';
     } else {
-      showError();
+      showEmailError();
+      emailError.className = 'error active';
     }
   });
 }
 
-function showError() {
+function showEmailError() {
   const { email } = emailElement();
   const { emailError } = emailElement();
 
@@ -31,7 +32,6 @@ function showError() {
   } else if (email.validity.tooShort) {
     emailError.textContent = `E-mail should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
   }
-  emailError.className = 'error active';
 }
 
-export default checkEmailValid;
+export { checkEmailValid, showEmailError };

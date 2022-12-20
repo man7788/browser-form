@@ -1,16 +1,16 @@
 import './style.css';
-import checkEmailValid from './emailField';
-import checkCountryValid from './countryField';
-import checkZipValid from './zipField';
-import checkpasswordValid from './passwordField';
-import checkconfirmValid from './confirmField';
+import { checkEmailValid } from './emailField';
+import { checkCountryValid } from './countryField';
+import { checkZipValid } from './zipField';
+import { checkPasswordValid } from './passwordField';
+import { checkConfirmValid } from './confirmField';
 import { checkFromValid, initialFrom } from './submitControl';
 
 checkEmailValid();
 checkCountryValid();
 checkZipValid();
-checkpasswordValid();
-checkconfirmValid();
+checkPasswordValid();
+checkConfirmValid();
 checkFromValid();
 initialFrom();
 

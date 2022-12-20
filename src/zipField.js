@@ -15,12 +15,13 @@ function checkZipValid() {
       zipError.textContent = '';
       zipError.className = 'error';
     } else {
-      showError();
+      showZipError();
+      zipError.className = 'error active';
     }
   });
 }
 
-function showError() {
+function showZipError() {
   const { zip } = zipElement();
   const { zipError } = zipElement();
 
@@ -28,11 +29,10 @@ function showError() {
     zipError.textContent = 'You need to enter a zip code.';
   } else if (zip.validity.patternMismatch) {
     zipError.textContent =
-      'Zip code only accept capital letters, numbers or "-".';
+      'Zip code only accepts capital letters, numbers or "-".';
   } else if (zip.validity.tooShort) {
     zipError.textContent = `Zip code should be at least ${zip.minLength} characters; you entered ${zip.value.length}.`;
   }
-  zipError.className = 'error active';
 }
 
-export default checkZipValid;
+export { checkZipValid, showZipError };
